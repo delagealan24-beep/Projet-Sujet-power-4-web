@@ -1,0 +1,34 @@
+               PARTIE 1:
+
+° Crée une fonction qui implante deux joueurs et une couleur choisie
+
+° Crée une fonction qui implante une grille de 7 colones et 6 lignes 
+
+° Crée une fonction qui vérifier quand un jeton est jouer tombe en bas de la colone et si la colone et pleine retoure une erreur.
+
+° Crée une fonction qui vérifie en cas de victoire en ligne / colone ou diagonale ou si il y a match nul
+
+              PARTIE 2:
+
+° Crée une interface graphique jouable intuitive en respectent les contraintes suivants:
+
+° Crée une route pour la page d'acceuil(route /):
+onglet régles du jeu, bouton démarrer une partie,courte description du projet 
+
+Crée une autre route pour la page où se déroulera le jeu(/game/init):
+initialisation des joueurs avec leurs pseudo et choix de couleur 
+
++ implémenter une route supplémentaire (/game/init/traitement), pour récupérer et traiter les données du formulaire qui valide les informations, ensuite redirige les joueurs sur la page du jeu.
+
+°Crée de la page de jeu (/game/play):
+Afficher les informations de la partie avec la grille et le tour par tour, qui commence et un formulaire pour permettre au joueur de choisir sur quelle colones souhaites t-il jouer.
+ + implémenter une route supplémentaire (/game/play/traitement) qui récupére et traitre les données du formulaire, elle servira à valider les actions du joueur exemple: s'il reste de la place dans une colone, les conditions de victoire ou d'égalité ou si le coup est invalide. Selon le résultat rediriger le joueur vers la page de fin de partie ou un message d'erreur.
+
+ °Crée une page de fin de partie(/game/end):
+La page de fin affichera le résultat du jeu, elle précisera si il ya une victoire en colone/ligne/diagonale ou si il y a égalité entre les joueurs.
+implémenter un bouton rejouer pour relancer une partie sans passer par la page d'acceuil.
+Crée un mémoire de partie qui récapitule (nom joueur, vainqueur, date, nbr de tours, etc) et implémenter une page scoreboard qui listera ces informationsnest les stockera dans un historique.
+
+°Crée une page scoreboard (/game/scoreboard):
+Cette page présentra l'histoirique des parties jouée avec les pseudo des joueurs et le résultat des parties avec nom du vainqueur et date.
+Stocker ces données dans un fichier ou une structure interne(par exemple un slice en Go)
