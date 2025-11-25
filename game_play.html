@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Partie en cours</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<header><h1>Puissance 4 – Partie</h1></header>
+
+<div class="container">
+
+    <h3>Tour du joueur : <span style="color:blue">{{ currentPlayer }}</span></h3>
+
+    <div class="grid">
+        <!-- Exemple de cellules (backend doit injecter p1/p2 selon la grille) -->
+        <!-- <div class="cell p1"></div> -->
+        <!-- <div class="cell p2"></div> -->
+        <!-- <div class="cell"></div> -->
+    </div>
+
+    <form action="/game/play/traitement" method="POST">
+        <label>Choisir la colonne :</label>
+        <input type="number" name="column" min="1" max="7" required>
+        <input type="submit" value="Jouer">
+    </form>
+
+    <p style="color:red">{{ errorMessage }}</p>
+
+</div>
+
+</body>
+</html>
