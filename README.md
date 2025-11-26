@@ -1,5 +1,7 @@
 "# Projet-Sujet-power-4-web"
 
+Mathlouthi Chaima
+
 Dans ce projet, j’ai développé l’ensemble de la logique du jeu Puissance 4 en langage Go. L’objectif était de créer un système capable de gérer une partie complète entre deux joueurs, depuis l’initialisation du plateau jusqu’à la détection d’un vainqueur ou d’une égalité.
 
 Pour cela, j’ai mis en place une structure de données représentant la grille du jeu, les joueurs, les coups réalisés ainsi que l’état général de la partie. Le programme initialise la grille vide, attribue les informations aux joueurs et démarre la partie en enregistrant le moment de début.
