@@ -103,10 +103,3 @@ En résumé, mes code gère :
 - Vainqueur ou égalité
 - Utilise une variable globale pour stocker l’historique
 
-
-
-
-
-
-
-
