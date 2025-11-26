@@ -102,3 +102,4 @@ En résumé, mes code gère :
 - Date
 - Vainqueur ou égalité
 - Utilise une variable globale pour stocker l’historique
+

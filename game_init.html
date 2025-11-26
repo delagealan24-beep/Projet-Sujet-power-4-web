@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Initialisation du jeu</title>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header><h1>Configuration de la partie</h1></header>
 
 <div class="container">
-    <form action="/game/init/traitement" method="POST">
+   
+    <form action="/game_play.html" method="GET">
 
         <h3>Joueur 1</h3>
         <input name="p1" placeholder="Pseudo joueur 1" required>
@@ -26,6 +27,7 @@
             <option value="red">Rouge</option>
         </select>
 
+     
         <input type="submit" value="Démarrer la partie">
     </form>
 </div>
