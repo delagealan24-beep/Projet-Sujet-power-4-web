@@ -1,23 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Fin de partie</title>
-    <link rel="stylesheet" href="static/style.css">
+  <meta charset="UTF-8">
+  <title>Fin de partie – Power’4</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+   
+    body { font-family: system-ui, sans-serif; background: #f6f8fb; margin: 0; }
+    .container { max-width: 760px; margin: 40px auto; padding: 0 16px; }
+    .card { background: #fff; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.08); padding: 24px; }
+    h1, h2 { margin: 0 0 12px; }
+    .result { font-size: 1.25rem; font-weight: 600; margin-bottom: 16px; }
+    .summary { width: 100%; border-collapse: collapse; margin: 12px 0 20px; }
+    .summary th, .summary td { padding: 8px 10px; border-bottom: 1px solid #eee; text-align: left; }
+    .actions { display: flex; gap: 12px; }
+    .btn { display: inline-block; padding: 10px 16px; border-radius: 8px; border: none; cursor: pointer; text-decoration: none; }
+    .btn-primary { background: #0b5fa5; color: #fff; }
+    .btn-secondary { background: #e9edf5; color: #0b5fa5; }
+    .winner-red { color: #d63b3b; }
+    .winner-yellow { color: #c59b1f; }
+    .muted { color: #667085; }
+  </style>
 </head>
 <body>
+  <main class="container">
+    <div class="card" role="region" aria-labelledby="end-title">
+      <h1 id="end-title">Fin de partie</h1>
 
-<header><h1>Résultat de la partie</h1></header>
+     
+      <p class="result" aria-live="polite">
+        {{if .Egalite}}
+          Égalité entre {{.Joueur1}} et {{.Joueur2}}.
+        {{else}}
+          Vainqueur :
+          <span class="{{if eq .CouleurVainqueur "rouge"}}winner-red{{else if eq .CouleurVainqueur "jaune"}}winner-yellow{{end}}">
+            {{.Vainqueur}}
+          </span>
+        {{end}}
+      </p>
 
-<div class="container">
+     
+      <h2>Récapitulatif de la partie</h2>
+      <table class="summary" aria-describedby="summary-caption">
+        <caption id="summary-caption" class="muted">Informations enregistrées pour le scoreboard</caption>
+        <tbody>
+          <tr>
+            <th scope="row">Joueur 1</th>
+            <td>{{.Joueur1}} ({{.CouleurJ1}})</td>
+          </tr>
+          <tr>
+            <th scope="row">Joueur 2</th>
+            <td>{{.Joueur2}} ({{.CouleurJ2}})</td>
+          </tr>
+          <tr>
+            <th scope="row">Nombre de tours</th>
+            <td>{{.Tours}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Date</th>
+            <td>{{.Date}}</td>
+          </tr>
+          {{if .Egalite}}
+          <tr>
+            <th scope="row">Résultat</th>
+            <td>Égalité</td>
+          </tr>
+          {{else}}
+          <tr>
+            <th scope="row">Vainqueur</th>
+            <td>{{.Vainqueur}}</td>
+          </tr>
+          {{end}}
+        </tbody>
+      </table>
 
-    <h2>{{ resultMessage }}</h2>
+    
+      <div class="actions">
+      
+        <form method="post" action="/game/init/traitement">
+          
+          <input type="hidden" name="name" value="{{.Joueur1}}">
+          <input type="hidden" name="color1" value="{{.CouleurJ1}}">
+          <input type="hidden" name="name2" value="{{.Joueur2}}">
+          <input type="hidden" name="color2" value="{{.CouleurJ2}}">
+          <button class="btn btn-primary" type="submit">Rejouer</button>
+        </form>
 
-    <a href="game_init.html"><button>Rejouer</button></a>
-    <br><br>
-    <a href="game_scoreboard.html">Voir le scoreboard</a>
+       
+        <a class="btn btn-secondary" href="/scoreboard">Scoreboard</a>
 
-</div>
+        
+        <a class="btn btn-secondary" href="/">Accueil</a>
+      </div>
 
+      
+      {{if .Message}}
+      <p class="muted" style="margin-top: 16px;">{{.Message}}</p>
+      {{end}}
+    </div>
+  </main>
 </body>
 </html>
