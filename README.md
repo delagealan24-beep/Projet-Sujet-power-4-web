@@ -103,3 +103,82 @@ En résumé, mes code gère :
 - Vainqueur ou égalité
 - Utilise une variable globale pour stocker l’historique
 
+/*  
+===========================================================
+            🟦 Partie 3 — Power'4 Web en Go
+===========================================================
+
+Dans cette troisième partie du projet, j’ai développé toute 
+la **version web du jeu Puissance 4**, en utilisant Go pour la 
+gestion du serveur, les routes et le moteur de templates.
+
+Cette partie se concentre sur :
+  • l’affichage du jeu dans le navigateur  
+  • l’interaction (clics sur les colonnes)  
+  • la logique serveur (tour, grille, victoire…)  
+  • l’interface, les fichiers HTML et le style  
+
+-----------------------------------------------------------
+🎯 OBJECTIFS DE MA PARTIE 3
+-----------------------------------------------------------
+
+Pour cette partie, j’ai réalisé :
+
+✔ Un serveur HTTP en Go  
+✔ Un système de templates (layout + pages dynamiques)  
+✔ Un formulaire de création de partie (noms + symboles)  
+✔ La gestion du tour par tour côté serveur  
+✔ L’affichage de la grille dans le navigateur  
+✔ La détection de victoire et d’égalité  
+✔ Une page de fin de partie  
+✔ Un scoreboard mémorisant les gagnants  
+✔ Le style complet du site (CSS simple et propre)  
+✔ La réinitialisation de la partie  
+
+-----------------------------------------------------------
+📁 CE QUE J’AI AJOUTÉ DANS LA PARTIE 3
+-----------------------------------------------------------
+
+🔹 **Templates HTML**
+  - layout.gohtml : template principal  
+  - homepage.gohtml : page d’accueil  
+  - game_init.gohtml : formulaire de création  
+  - game_play.gohtml : page de jeu avec la grille  
+  - game_end.gohtml : fin de partie  
+  - scoreboard.gohtml : liste des victoires  
+
+🔹 **Fichiers statiques**
+  - style.css : mon design (couleurs, cartes, grille, boutons)
+
+🔹 **Routes Go**
+  - `/`                    → accueil  
+  - `/game/init`           → création d’une partie  
+  - `/game/play`           → interface du jeu  
+  - `/game/play/move?col=` → poser un jeton  
+  - `/game/end`            → fin de partie  
+  - `/game/scoreboard`     → historique des gagnants  
+  - `/game/reset`          → remettre à zéro  
+
+🔹 **Logique**
+  - placeToken() : poser un jeton par colonne  
+  - checkVictory() : détecter les 4 alignés  
+  - isDraw() : match nul  
+  - Gestion du tour (J1/J2)  
+  - Stockage des gagnants en mémoire  
+  - Protection avec Mutex  
+
+-----------------------------------------------------------
+✔ BILAN DE MA PARTIE 3
+-----------------------------------------------------------
+
+Dans cette partie 3, j’ai transformé le jeu en une vraie 
+application web complète.  
+J’ai appris à structurer des templates, gérer un serveur Go, 
+transmettre des données aux pages, manipuler une grille en 
+HTML, gérer les interactions et produire une interface 
+entièrement fonctionnelle.
+
+===========================================================
+            FIN DU README — Partie 3 terminée 🎉
+===========================================================
+

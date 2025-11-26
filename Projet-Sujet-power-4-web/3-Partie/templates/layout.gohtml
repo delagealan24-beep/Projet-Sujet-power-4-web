@@ -1,0 +1,30 @@
+{{define "layout.gohtml"}}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{.Title}}</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Power'4 Web</h1>
+    <nav>
+      <a href="/">Accueil</a> |
+      <a href="/game/init">Nouvelle partie</a> |
+      <a href="/game/scoreboard">Scoreboard</a> |
+      <a href="/game/reset">Réinitialiser</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    {{.Content}}
+  </main>
+
+  <footer class="footer">
+    <small>© 2025 - Power'4 Web</small>
+  </footer>
+</body>
+</html>
+{{end}}

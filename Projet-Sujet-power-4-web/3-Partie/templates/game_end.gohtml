@@ -1,0 +1,30 @@
+{{define "game_end.gohtml"}}
+<section class="card">
+  <h2>Fin de la partie</h2>
+  {{if .Winner}}
+    <p class="notice success">Victoire : {{.Winner}}</p>
+  {{else if .Draw}}
+    <p class="notice">Match nul</p>
+  {{else}}
+    <p>Partie non terminée.</p>
+  {{end}}
+
+  <h3>Grille finale</h3>
+  <table class="grid">
+    <tbody>
+      {{range $r := rows .Grille}}
+      <tr>
+        {{range $c := cols $r}}
+          <td class="cell">{{$c}}</td>
+        {{end}}
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+
+  <p>
+    <a class="button" href="/game/init">Nouvelle partie</a>
+    <a class="button" href="/game/scoreboard">Voir scoreboard</a>
+  </p>
+</section>
+{{end}}

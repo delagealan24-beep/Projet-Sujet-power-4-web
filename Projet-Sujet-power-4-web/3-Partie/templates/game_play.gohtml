@@ -1,0 +1,36 @@
+{{define "game_play.gohtml"}}
+<section class="card">
+  <h2>Partie : {{.Joueur1}} ({{.CouleurJ1}}) vs {{.Joueur2}} ({{.CouleurJ2}})</h2>
+  <p>{{.Message}}</p>
+
+  {{if .Winner}}
+    <div class="notice success">Victoire : {{.Winner}}</div>
+    <p><a class="button" href="/game/end">Voir fin de partie</a></p>
+  {{else if .Draw}}
+    <div class="notice">Match nul</div>
+    <p><a class="button" href="/game/end">Voir fin de partie</a></p>
+  {{end}}
+
+  <table class="grid" aria-label="Grille Puissance 4">
+    <thead>
+      <tr>
+        {{range $c := seq 0 6}}
+          <th><a class="col-link" href="/game/play/move?col={{$c}}">↓</a></th>
+        {{end}}
+      </tr>
+    </thead>
+    <tbody>
+      {{range $r := rows .Grille}}
+      <tr>
+        {{range $c := cols $r}}
+          <td class="cell">{{$c}}</td>
+        {{end}}
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+
+  <p class="small">Tour : {{.Tour}}</p>
+  <p><a class="button" href="/game/reset">Retour accueil</a></p>
+</section>
+{{end}}

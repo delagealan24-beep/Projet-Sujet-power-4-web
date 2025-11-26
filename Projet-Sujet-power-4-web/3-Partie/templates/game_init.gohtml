@@ -1,0 +1,26 @@
+{{define "game_init.gohtml"}}
+<section class="card">
+  <h2>Créer une partie</h2>
+  <form action="/game/init/traitement" method="post">
+    <label>Nom Joueur 1
+      <input type="text" name="name1" placeholder="Joueur 1" />
+    </label>
+    <label>Symbole/Couleur Joueur 1
+      <input type="text" name="color1" placeholder="🔴" maxlength="4" />
+      <small>ex: 🔴 ou X</small>
+    </label>
+
+    <label>Nom Joueur 2
+      <input type="text" name="name2" placeholder="Joueur 2" />
+    </label>
+    <label>Symbole/Couleur Joueur 2
+      <input type="text" name="color2" placeholder="🟡" maxlength="4" />
+      <small>ex: 🟡 ou O</small>
+    </label>
+
+    <div>
+      <button class="button" type="submit">Démarrer la partie</button>
+    </div>
+  </form>
+</section>
+{{end}}
