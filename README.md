@@ -110,7 +110,7 @@ En résumé, mes code gère :
 
   
    Partie 3 — Power'4 Web en Go
-===========================================================
+
 
 Dans cette troisième partie du projet, j’ai développé toute 
 la **version web du jeu Puissance 4**, en utilisant Go pour la 
@@ -124,7 +124,7 @@ Cette partie se concentre sur :
 
 
  OBJECTIFS DE MA PARTIE 3
------------------------------------------------------------
+
 
 Pour cette partie, j’ai réalisé :
 
@@ -141,7 +141,7 @@ Pour cette partie, j’ai réalisé :
 
 
  CE QUE J’AI AJOUTÉ DANS LA PARTIE 3
------------------------------------------------------------
+
 
  *Templates HTML*
   - layout.gohtml : template principal  
@@ -173,7 +173,7 @@ Pour cette partie, j’ai réalisé :
 
 
 ✔ BILAN DE MA PARTIE 3
------------------------------------------------------------
+
 
 Dans cette partie 3, j’ai transformé le jeu en une vraie 
 application web complète.  
