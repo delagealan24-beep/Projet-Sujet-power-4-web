@@ -103,10 +103,12 @@ En résumé, mes code gère :
 - Vainqueur ou égalité
 - Utilise une variable globale pour stocker l’historique
 
+
+
+
   MATHLOUTHI CHAIMA
 
   
-===========================================================
    Partie 3 — Power'4 Web en Go
 ===========================================================
 
@@ -120,28 +122,28 @@ Cette partie se concentre sur :
   • la logique serveur (tour, grille, victoire…)  
   • l’interface, les fichiers HTML et le style  
 
------------------------------------------------------------
+
  OBJECTIFS DE MA PARTIE 3
 -----------------------------------------------------------
 
 Pour cette partie, j’ai réalisé :
 
-✔ Un serveur HTTP en Go  
-✔ Un système de templates (layout + pages dynamiques)  
-✔ Un formulaire de création de partie (noms + symboles)  
-✔ La gestion du tour par tour côté serveur  
-✔ L’affichage de la grille dans le navigateur  
-✔ La détection de victoire et d’égalité  
-✔ Une page de fin de partie  
-✔ Un scoreboard mémorisant les gagnants  
-✔ Le style complet du site (CSS simple et propre)  
-✔ La réinitialisation de la partie  
+* Un serveur HTTP en Go  
+* Un système de templates (layout + pages dynamiques)  
+* Un formulaire de création de partie (noms + symboles)  
+* La gestion du tour par tour côté serveur  
+* L’affichage de la grille dans le navigateur  
+* La détection de victoire et d’égalité  
+* Une page de fin de partie  
+* Un scoreboard mémorisant les gagnants  
+* Le style complet du site (CSS simple et propre)  
+* La réinitialisation de la partie  
 
------------------------------------------------------------
+
  CE QUE J’AI AJOUTÉ DANS LA PARTIE 3
 -----------------------------------------------------------
 
-🔹 **Templates HTML**
+ *Templates HTML*
   - layout.gohtml : template principal  
   - homepage.gohtml : page d’accueil  
   - game_init.gohtml : formulaire de création  
@@ -149,10 +151,10 @@ Pour cette partie, j’ai réalisé :
   - game_end.gohtml : fin de partie  
   - scoreboard.gohtml : liste des victoires  
 
-🔹 **Fichiers statiques**
+*Fichiers statiques*
   - style.css : mon design (couleurs, cartes, grille, boutons)
 
-🔹 **Routes Go**
+ *Routes Go*
   - `/`                    → accueil  
   - `/game/init`           → création d’une partie  
   - `/game/play`           → interface du jeu  
@@ -161,7 +163,7 @@ Pour cette partie, j’ai réalisé :
   - `/game/scoreboard`     → historique des gagnants  
   - `/game/reset`          → remettre à zéro  
 
-🔹 **Logique**
+*Logique*
   - placeToken() : poser un jeton par colonne  
   - checkVictory() : détecter les 4 alignés  
   - isDraw() : match nul  
@@ -169,7 +171,7 @@ Pour cette partie, j’ai réalisé :
   - Stockage des gagnants en mémoire  
   - Protection avec Mutex  
 
------------------------------------------------------------
+
 ✔ BILAN DE MA PARTIE 3
 -----------------------------------------------------------
 
