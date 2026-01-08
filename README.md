@@ -1,5 +1,18 @@
 "# Projet-Sujet-power-4-web"
 
+Les modifications apportées :
+- J’ai refait tout mon main.go car il manquait énormément de choses.
+- J’ai implanté toutes mes routes HTML dans mon code Go.
+- J’ai refait mes templates en y apportant les modifications faites dans mon main.go.
+- J’ai aussi ajouté un go.mod car je n’en avais pas, ce qui était une erreur de ma part.
+- J’ai également ajouté un fichier de debug pour les potentiels problèmes.
+Mais même avec ces modifications, je n’arrive pas à faire fonctionner le site web. Toutes mes routes sont mises, mais mon CSS ne s’affiche pas, aucun des boutons ne fonctionne et on ne peut pas changer de page.
+
+
+
+
+
+
 Mathlouthi Chaima
 
 Dans ce projet, j’ai développé l’ensemble de la logique du jeu Puissance 4 en langage Go. L’objectif était de créer un système capable de gérer une partie complète entre deux joueurs, depuis l’initialisation du plateau jusqu’à la détection d’un vainqueur ou d’une égalité.
