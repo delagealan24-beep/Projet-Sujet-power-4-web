@@ -1,0 +1,65 @@
+{{define "init"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Initialisation du jeu</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+    <header>
+        {{if .Error}}
+            <div class="popup-error">
+                {{.Error}}
+            </div>
+        {{end}}
+    </header>
+    <form action="/templates/init.html/traitement" method="POST">
+        <h1>Joueur 1</h1>
+        <div class="player-box">
+            <div class="player-form">
+                <label for="pseudo1">Pseudo :</label>
+                <input type="text" name="pseudo1" id="pseudo1" required>
+            </div>
+            <div class="color-box">
+                <p>Couleur :</p>
+                <label>
+                    <input type="radio" name="couleur1" value="rouge" checked>
+                    <span class="color-choice rouge"></span>
+                </label>
+                <label>
+                    <input type="radio" name="couleur1" value="jaune">
+                    <span class="color-choice jaune"></span>
+                </label>
+            </div>
+        </div>
+        <h1>Joueur 2</h1>
+        <div class="player-box">
+            <div class="player-form">
+                <label for="pseudo2">Pseudo :</label>
+                <input type="text" name="pseudo2" id="pseudo2" required>
+            </div>
+            <div class="color-box">
+                <p>Couleur :</p>
+                <label>
+                    <input type="radio" name="couleur2" value="rouge">
+                    <span class="color-choice rouge"></span>
+                </label>
+                <label>
+                    <input type="radio" name="couleur2" value="jaune" checked>
+                    <span class="color-choice jaune"></span>
+                </label>
+            </div>
+            <div class="submit-box">
+                <button type="submit">Commencer la partie</button>
+            </div>
+            <div class="home-box">
+                <a href="/" class="btn-home">Retour à l'acceuil</a>
+            </div>
+            
+        </div>
+    </form>
+</body>
+</html>
+{{end}}

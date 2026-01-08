@@ -1,0 +1,50 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/style.css">
+     <title>Puissance 4</title>
+</head>
+<body>
+    <header class="bandeau">
+        <img src="/assets/logo/logo.png" alt="logo" class="logo">
+    </header>
+    <h1>Puissance 4</h1>
+    <form action="/templates/init.html" method="GET">
+        <button type="submit">Commencer une partie</button>
+    </form>
+
+    <form action="/templates/scoreboard.html" method="GET">
+        <button type="submit">Voir le scoreboard</button>
+    </form>
+     <div class="box">
+        <h1>Règles du Puissance 4</h1>
+
+        <p>Etre le premier joueur à aligner <strong>quatre jetons</strong> horizontalement, verticalement ou en diagonale.</p>
+
+        <h2>Préparation du Partie</h2>
+        <ul>
+            <li>Une grille de 6 lignes et 7 colonnes.</li>
+            <li>Chaque joueur choisit la couleur de ces jetons.</li>
+            <li>Les jetons jouer tombent à la case la plus basse disponible</li>
+        </ul>
+
+        <h2>Déroulement du partie</h2>
+        <ul>
+            <li>Les joueurs joueut à tour de rôle.</li>
+            <li>Au début de leurs tour, le joueur choisi la colonne où il souhaite jouer.</li>
+            <li>Le premier à aligner 4 jetons gagne.</li>
+            <li>Si la grille est pleine sans gagnant, c’est une égalité.</li>
+        </ul>
+
+        <h2>Fin dde partie</h2>
+        <ul>
+            <li><strong>Victoire:</strong>Au premier joueur qui alignera quatre jetons.</li>
+            <li><strong>Egalité:</strong>Si la grille est pleine sans aucun alignement de jetons.</li>
+        </ul>
+     </div>   
+</body>
+</html>
+{{end}}

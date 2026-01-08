@@ -1,0 +1,69 @@
+{{define "play"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Puissance 4</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+     <h1>Puissance 4</h1>
+    <p class="message">{{.Message}}</p>
+
+    <!-- Tour actuel -->
+    <span>Tour actuel :</span>
+    {{if eq .CurrentPlayer "rouge"}}
+    <div class="player-box">
+        <div class="player-form"><span>{{.Player1.Pseudo}}</span></div>
+        <div class="color-display rouge"></div>
+    </div>
+    {{else if eq .CurrentPlayer "jaune"}}
+    <div class="player-box">
+        <div class="player-form"><span>{{.Player2.Pseudo}}</span></div>
+        <div class="color-display jaune"></div>
+    </div>
+    {{else if eq .CurrentPlayer "bleu"}}
+    <div class="player-box">
+        <div class="player-form"><span>{{.Player1.Pseudo}}</span></div>
+        <div class="color-display bleu"></div>
+    </div>
+    {{else if eq .CurrentPlayer "vert"}}
+    <div class="player-box">
+        <div class="player-form"><span>{{.Player2.Pseudo}}</span></div>
+        <div class="color-display vert"></div>
+    </div>
+    {{end}}
+    <span>(Tour n°{{.Tour}})</span>
+
+    <h2>Grille de jeu :</h2>
+    <table class="grid">
+        {{range $i, $row := .Grille}}
+        <tr>
+            {{range $j, $cell := $row}}
+            <td class="{{if eq $cell "rouge"}}rouge{{else if eq $cell "jaune"}}jaune{{else if eq $cell "bleu"}}bleu{{else if eq $cell "vert"}}vert{{else}}vide{{end}}">
+                {{if eq $cell "rouge"}}X{{else if eq $cell "jaune"}}O{{else if eq $cell "bleu"}}B{{else if eq $cell "vert"}}V{{else}}&nbsp;{{end}}
+            </td>
+            {{end}}
+        </tr>
+        {{end}}
+    </table>
+
+    {{if .Fin}}
+    <h2>La partie est terminée !</h2>
+    <form action="/templates/init.html" method="GET">
+        <button type="submit">Recommencer une partie</button>
+    </form>
+    {{else}}
+    <h2>Choisissez une colonne :</h2>
+    <form action="/templates/play.html/traitement" method="POST">
+        {{range $j := seq 0 6}}
+        <button type="submit" name="colonne" value="{{$j}}">{{$j}}</button>
+        {{end}}
+    </form>
+    {{end}}
+
+    <a href="/">Retour à l'accueil</a><br>
+    <a href="/scoreboard" class="btn-scoreboard">Voir le scoreboard</a>
+</body>
+</html>
+{{end}}
