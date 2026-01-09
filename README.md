@@ -6,10 +6,7 @@ Les modifications apportées :
 - J’ai refait mes templates en y apportant les modifications faites dans mon main.go.
 - J’ai aussi ajouté un go.mod car je n’en avais pas, ce qui était une erreur de ma part.
 - J’ai également ajouté un fichier de debug pour les potentiels problèmes.
-Mais même avec ces modifications, je n’arrive pas à faire fonctionner le site web. Toutes mes routes sont mises, mais mon CSS ne s’affiche pas, aucun des boutons ne fonctionne et on ne peut pas changer de page.
-
-
-
+- j'ai implémenter la grille dans mon play.html pour quelle s'affiche et qu'on puisse jouer une partie.
 
 
 
