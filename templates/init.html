@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Initialisation du jeu</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
             </div>
         {{end}}
     </header>
-    <form action="/templates/init.html/traitement" method="POST">
+    <form action="/templates/init/traitement" method="POST">
         <h1>Joueur 1</h1>
         <div class="player-box">
             <div class="player-form">
@@ -52,8 +52,8 @@
                 </label>
             </div>
             <div class="submit-box">
-                <button type="submit">Commencer la partie</button>
-            </div>
+                  <button type="submit">Commencer la partie</button>
+                </div>
             <div class="home-box">
                 <a href="/" class="btn-home">Retour à l'acceuil</a>
             </div>

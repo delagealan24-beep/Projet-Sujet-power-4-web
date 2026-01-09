@@ -78,6 +78,21 @@ func initialiserGrille() [6][7]string {
 	}
 	return g
 }
+func afficherGrille(grille [6][7]string) {
+	fmt.Println("État de la grille :")
+	for i := 0; i < 6; i++ {
+		for j := 0; j < 7; j++ {
+			if grille[i][j] == " " {
+				fmt.Print("| |")
+			} else {
+				fmt.Printf("|%s|", grille[i][j][:1])
+			}
+		}
+		fmt.Println()
+	}
+	fmt.Println(" 0  1  2  3  4  5  6")
+	fmt.Println()
+}
 
 func switchJoueur(current string) string {
 	if current == game.Joueur1.Couleur {
@@ -211,20 +226,19 @@ func main() {
 		"seq":          seq,
 		"contains":     strings.Contains,
 		"emptyOrValue": emptyOrValue,
-	}).ParseGlob("templates/*.html")
+	}).ParseGlob("./../templates/*.html")
 
 	if errTemplate != nil {
 		fmt.Println("Erreur lors du chargement des templates :", errTemplate.Error())
 		os.Exit(1)
 	}
 
-	http.Handle("/style.css/", http.StripPrefix("/style.css/", http.FileServer(http.Dir("assets/styles.css"))))
-	http.Handle("/logo/", http.StripPrefix("/logo/", http.FileServer(http.Dir("assets/logo"))))
+	http.Handle("/static/", http.StripPrefix("static/", http.FileServer(http.Dir("./../assets"))))
 
 	game = Game{
 		Grille:       initialiserGrille(),
-		Joueur1:      Joueur{Pseudo: " ", Couleur: "rouge"},
-		Joueur2:      Joueur{Pseudo: " ", Couleur: "jaune"},
+		Joueur1:      Joueur{Pseudo: "", Couleur: "rouge"},
+		Joueur2:      Joueur{Pseudo: "", Couleur: "jaune"},
 		JoueurActuel: "rouge",
 		Tour:         0,
 		Message:      "Bienvenue ! Cliquez sur une colonne pour jouer.",

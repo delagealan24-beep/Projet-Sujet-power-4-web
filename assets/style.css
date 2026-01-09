@@ -3,15 +3,17 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
+    box-sizing: border-box;
 }
 body {
-    font-family: Arial, sans-serif;
-    background-image: url(assets/background/fondbleu.png);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background-size: cover;
-    background-position: center;   
+    background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
+    color: #fff;
 }
 
 .navbar {
@@ -26,6 +28,7 @@ body {
 .logo img {
     height: 200px;
     width: auto;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
 }
 
 .navbar .nav-links ul {
@@ -37,56 +40,84 @@ body {
 }
 
 .navbar .nav-links ul li.active a {
-   color: #ed3c57;
+   color: #ffd93d;
    font-weight: 600;
 }
 
 .navbar a {
-    color:#020202;
+    color: #fff;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
+
+.navbar a:hover {
+    color: #ffd93d;
+}
+
 .main-content {
     margin-top: 50px;
 }
 
 .main-content h1 {
-    font-size: 2rem;
-    color: #000000;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-weight: 700;
 }
-
 
 .center-screen {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh; 
+  height: 80vh;
   flex-direction: column;
   text-align: center;
   padding: 10px;
 }
 
 .center-screen .btn {
-  font-size: 1.2rem;
-  padding: 0.8rem 1.5rem;
-  margin-top: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  background-color: #ed3c57;
-  
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  background: linear-gradient(145deg, #ff6b6b, #ee5a52);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.center-screen .btn:hover {
+  background: linear-gradient(145deg, #ee5a52, #ff6b6b);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.4);
 }
 
 .container {
     padding: 40px;
 }
 
-
 .score-table {
     width: 100%;
     border-collapse: collapse;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .score-table th, .score-table td {
-    border: 1px solid #333;
-    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 15px;
     text-align: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.score-table th {
+    background: rgba(255,255,255,0.2);
+    font-size: 1.2rem;
 }
 
